@@ -1,18 +1,22 @@
 % !TEX encoding = UTF-8 Unicode
-\documentclass[11.2pt,twoside]{book}\usepackage[T1]{fontenc}
+\documentclass[11.2pt,twoside]{book}
+
+
 \usepackage{tikz}
 
-\usepackage[active,tightpage,xetex]{preview}
 
-\usepackage{fontspec,xunicode}
+%\PreviewEnvironment[]{pgfpicture}
 
-\PreviewEnvironment{pgfpicture}
 
-\setlength\PreviewBorder{0pt}
 
 \usetikzlibrary{calc}
 
 \usetikzlibrary{positioning}
+
+\usepackage{tcolorbox}
+
+\tcbuselibrary{skins}
+
 
 
 
@@ -20,9 +24,18 @@
 
 \setmainfont{Open Sans Condensed Light}
 
+
+
 \input{datos}
 \definecolor{color1}{RGB}{0,0,128}
 \definecolor{color2}{RGB}{100,100,220}
+
+%\usepackage[active,tightpage,xetex]{preview}
+%
+%
+%\PreviewEnvironment[]{tikzpicture}
+%\setlength\PreviewBorder{0pt}
+\thispagestyle{empty}
 \begin{document}
 \begin{tikzpicture}
 
@@ -46,27 +59,27 @@
 %#############REGION VIII################################# %
 \filldraw [gray] (0.55,0.76) circle (1.2pt);
 \draw [ gray] (0.55,0.76) -- (0.73,0.76);
-\node[text width=3cm, color=gray] at (0.835,0.76) {Región VIII \\  \regionOcho \%};
+\node[text width=3cm, color=gray] at (0.835,0.76) {Región VIII \\  \regionOcho };
 
 
 %#############REGION II################################# %
 \filldraw [gray] (0.52,0.41) circle (1.2pt);
 \draw [ gray] (0.52,0.59) -- (0.73,0.59);
 \draw [gray] (0.52,0.41) -- (0.52, 0.59);
-\node[text width=3cm, color=gray] at (0.835,0.59) {Región II \\  \regionDos \%};
+\node[text width=3cm, color=gray] at (0.835,0.59) {Región II \\  \regionDos };
 
 
 %#############REGION III################################# %
 \filldraw [gray] (0.64,0.32) circle (1.2pt);
 \draw [ gray] (0.64,0.32) -- (0.73,0.32);
-\node[text width=3cm, color=gray] at (0.835,0.32) {Región III \\  \regionTres \%};
+\node[text width=3cm, color=gray] at (0.835,0.32) {Región III \\  \regionTres };
 
 
 
 %#############REGION IV################################# %
 \filldraw [gray] (0.52,0.14) circle (1.2pt);
 \draw [ gray] (0.52,0.14) -- (0.73,0.14);
-\node[text width=3cm, color=gray] at (0.835,0.14) {Región IV \\  \regionCuatro \%};
+\node[text width=3cm, color=gray] at (0.835,0.14) {Región IV \\  \regionCuatro };
 
 
 
@@ -77,13 +90,13 @@
 \draw [ gray] (0.34,0.4) -- (0.34,0.83);
 \filldraw [gray] (0.34,0.4) circle (1.2pt);
 \draw [ gray] (0.34,0.83) -- (0.15,0.83);
-\node[align=right,text width=3cm, color=gray] at (0.05,0.83) {Región VII \\ \regionSiete \%};
+\node[align=right,text width=3cm, color=gray] at (0.05,0.83) {Región VII \\ \regionSiete };
 
 % ###############REGION VI############################## %
 \draw [ gray] (0.28,0.24) -- (0.28,0.69);
 \filldraw [gray] (0.28,0.24) circle (1.2pt);
 \draw [ gray] (0.28,0.69) -- (0.15,0.69	);
-\node[align=right,text width=3cm, color=gray] at (0.05,0.69) {Región VI \\ \regionSeis \%};
+\node[align=right,text width=3cm, color=gray] at (0.05,0.69) {Región VI \\ \regionSeis };
 
 
 
@@ -97,22 +110,38 @@
 \draw [ gray] (0.46,0.22) -- (0.46,0.1);
 \filldraw [gray] (0.46,0.22) circle (1.2pt);
 \draw [ gray] (0.46,0.1) -- (0.15,0.1	);
-\node[align=right,text width=3cm, color=gray] at (0.05,0.10) {Región I \\ \regionUno \%};
+\node[align=right,text width=3cm, color=gray] at (0.05,0.10) {Región I \\ \regionUno };
 
 % ###############REGION V############################## %
 \draw [ gray] (0.22,0.17) -- (0.22,0.24);
 \filldraw [gray] (0.39,0.17) circle (1.2pt);
 \draw [ gray] (0.39,0.17) -- (0.22,0.17	);
 \draw [ gray] (0.22,0.24) -- (0.15,0.24	);
-\node[align=right,text width=3cm, color=gray] at (0.05,0.24) {Región V \\ \regionCinco \%};
+\node[align=right,text width=3cm, color=gray] at (0.05,0.24) {Región V \\ \regionCinco };
 
+
+\shade[left color=color2,right color=color1] (0.3,0.97) rectangle (0.7,0.99);
+\node[align=right,text width=3cm, color=gray] at (0.2,0.98) {Valor más pequeño};
+\node[align=left,text width=3cm, color=gray] at (0.8,0.98) {Valor más grande};
+%\node[align=right] at (0.5,0.5) {\begin{tcolorbox}[width=4in,
+%	enhanced,
+%	frame hidden,
+%	interior hidden,
+%	boxsep=0pt,
+%	left=0pt,
+%	right=0pt,
+%	top=2pt,
+%	interior style={left color=color2,right color=color1}
+%	]%%
+%	
+%	\end{tcolorbox}};
 
 \end{scope}
 
 
-\begin{scope}
-\shadedraw[left color=blue,right color=red] (3,3) rectangle (2,2);
-\end{scope}
+
 
 \end{tikzpicture}
+
+
 \end{document}
